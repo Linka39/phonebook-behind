@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.linka39.mapper.PhoneBookMapper">
+    <resultMap id="PhoneBookResult" type="PhoneBook">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <result property="phoneNumber" column="phoneNumber"></result>
+        <result property="teleNumber" column="teleNumber"></result>
+        <result property="workAddress" column="workAddress"></result>
+        <result property="homeAddress" column="homeAddress"></result>
+        <result property="image" column="image"></result>
+        <result property="remark" column="remark"></result>
+        <result property="initial" column="initial"></result>
+    </resultMap>
+
+    <select id="loadByInitial" parameterType="String" resultMap="PhoneBookResult">
+        select id,name,image from t_phoneBook where initial = #{initial}
+    </select>
+</mapper>

@@ -4,6 +4,7 @@ import com.linka39.interceptor.SysInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //@Configuration标注在类上，相当于把该类作为spring的xml配置文件中的<beans>
@@ -29,5 +30,15 @@ public class WebAppConfigurer implements WebMvcConfigurer {
         registry.addInterceptor(new SysInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns(patterns);
+    }
+
+    /**
+     * 映射服务器资源
+     * @param registry
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/image/**").addResourceLocations("file:E:\\img\\");
+        // linux路径    file:/home/userImages/
     }
 }

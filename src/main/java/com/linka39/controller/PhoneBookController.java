@@ -14,9 +14,8 @@ import java.util.Map;
 
 /**
  * 电话簿Controller类
- * @author linka39_小锋
+ * @author linka39
  * @site www.linka39.com
- * @company Java知识分享网
  * @create 2019-09-12 下午 10:30
  */
 @RestController
@@ -33,6 +32,7 @@ public class PhoneBookController {
      */
     @RequestMapping("/loadAll")
     public R loadAll()throws Exception{
+        //LinkedHashMap相对有序
         Map<String,Object> map=new LinkedHashMap<>();
         char []letters={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','#'};
         for(int i=0;i<letters.length;i++){

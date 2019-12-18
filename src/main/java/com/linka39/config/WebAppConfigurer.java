@@ -10,6 +10,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@Configuration标注在类上，相当于把该类作为spring的xml配置文件中的<beans>
 @Configuration
 public class WebAppConfigurer implements WebMvcConfigurer {
+    /**
+     * 配置服务端跨域访问
+     * @param registry
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
@@ -18,7 +22,6 @@ public class WebAppConfigurer implements WebMvcConfigurer {
                 .allowedMethods("GET","HEAD","POST","PUT","DELETE")
                 .maxAge(3600);
     }
-
     /**
      * 配置拦截器
      */

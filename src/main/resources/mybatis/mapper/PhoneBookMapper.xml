@@ -18,4 +18,7 @@
     <select id="loadByInitial" parameterType="String" resultMap="PhoneBookResult">
         select id,name,image from t_phoneBook where initial = #{initial}
     </select>
+    <insert id="add" parameterType="PhoneBook">
+        insert into t_phoneBook values (null,#{name},#{phoneNumber},#{teleNumber},#{workAddress},#{homeAddress},#{image},#{remark},#{initial})
+    </insert>
 </mapper>

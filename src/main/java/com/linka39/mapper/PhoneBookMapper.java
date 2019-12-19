@@ -12,4 +12,5 @@ public interface PhoneBookMapper {
      * 根据姓名首字母查询电话簿记录
      */
     List<PhoneBook> loadByInitial(String initial);
+    Integer add(PhoneBook phoneBook);
 }

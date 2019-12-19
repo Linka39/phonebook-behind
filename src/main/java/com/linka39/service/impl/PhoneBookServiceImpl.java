@@ -20,4 +20,8 @@ public class PhoneBookServiceImpl implements PhoneBookService {
         return phoneBookMapper.loadByInitial(initial);
     }
 
+    @Override
+    public Integer add(PhoneBook phoneBook) {
+        return phoneBookMapper.add(phoneBook);
+    }
 }

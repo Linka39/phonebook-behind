@@ -94,6 +94,16 @@ public class StringUtil {
         return result;
     }
 
+    /**
+     * 判断是否为字母
+     * @param str
+     * @return 是字母返回true，否则返回false
+     */
+    public static boolean isAlpha(String str){
+        if(str==null) return false;
+        return str.matches("[a-zA-Z]+");
+    }
+
 
 
 }

@@ -8,5 +8,10 @@ public interface PhoneBookService {
     /**
      * 电话簿service接口
      */
-   public List<PhoneBook> loadByInitial(String initial);
+    public List<PhoneBook> loadByInitial(String initial);
+
+    /**
+     * 添加通讯记录
+     */
+    Integer add(PhoneBook phoneBook);
 }

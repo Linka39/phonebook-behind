@@ -3,7 +3,10 @@ package com.linka39.controller;
 import com.linka39.entity.PhoneBook;
 import com.linka39.entity.R;
 import com.linka39.service.PhoneBookService;
+import com.linka39.util.PinYinUtil;
+import com.linka39.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,5 +48,34 @@ public class PhoneBookController {
         Map<String,Object> resultMap=new HashMap<>();
         resultMap.put("data",map);
         return R.ok(resultMap);
+    }
+
+    /**
+     * 添加或修改通讯记录
+     * @param phoneBook
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/save")
+    public R save(@RequestBody PhoneBook phoneBook) throws Exception{
+        int resultTotal=0;
+        //获取拼音首字母并将其转换为大写
+        String initial = String.valueOf(PinYinUtil.getPinYin(phoneBook.getName()).charAt(0)).toUpperCase() ;
+        if(StringUtil.isAlpha(initial)){
+            phoneBook.setInitial(initial);
+        }else {
+            phoneBook.setInitial("#");
+        }
+        //判断添加,修改
+        if(phoneBook.getId()==null){
+            resultTotal = phoneBookService.add(phoneBook);
+        }else {
+
+        }
+        if(resultTotal>0){
+            return R.ok();
+        }else {
+            return R.error(-1,"保存失败，请联系管理员！");
+        }
     }
 }

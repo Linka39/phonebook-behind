@@ -78,4 +78,18 @@ public class PhoneBookController {
             return R.error(-1,"保存失败，请联系管理员！");
         }
     }
+
+    /**
+     * 根据id查询电话簿信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/findById")
+    public R findById(Integer id)throws Exception{
+        PhoneBook phoneBook=phoneBookService.findById(id);
+        Map<String,Object> resultMap = new HashMap<>();
+        resultMap.put("phoneBook",phoneBook);
+        return R.ok(resultMap);
+    }
 }

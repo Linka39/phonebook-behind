@@ -14,4 +14,11 @@ public interface PhoneBookService {
      * 添加通讯记录
      */
     Integer add(PhoneBook phoneBook);
+
+    /**
+     * 获取用户信息
+     * @param id
+     * @return
+     */
+    PhoneBook findById(Integer id);
 }

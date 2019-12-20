@@ -26,4 +26,11 @@ public interface PhoneBookMapper {
      * @return
      */
     PhoneBook findById(Integer id);
+
+    /**
+     * 修改通讯录信息
+     * @param phoneBook
+     * @return
+     */
+    Integer update(PhoneBook phoneBook);
 }

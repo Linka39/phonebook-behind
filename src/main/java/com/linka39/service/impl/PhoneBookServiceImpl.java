@@ -29,4 +29,9 @@ public class PhoneBookServiceImpl implements PhoneBookService {
     public PhoneBook findById(Integer id) {
         return phoneBookMapper.findById(id);
     }
+
+    @Override
+    public Integer update(PhoneBook phoneBook) {
+        return phoneBookMapper.update(phoneBook);
+    }
 }

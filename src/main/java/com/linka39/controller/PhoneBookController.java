@@ -70,7 +70,7 @@ public class PhoneBookController {
         if(phoneBook.getId()==null){
             resultTotal = phoneBookService.add(phoneBook);
         }else {
-
+            resultTotal = phoneBookService.update(phoneBook);
         }
         if(resultTotal>0){
             return R.ok();

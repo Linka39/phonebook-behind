@@ -16,6 +16,11 @@ public interface PhoneBookService {
     Integer add(PhoneBook phoneBook);
 
     /**
+     * 修改通讯记录
+     */
+    Integer update(PhoneBook phoneBook);
+
+    /**
      * 获取用户信息
      * @param id
      * @return

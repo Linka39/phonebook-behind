@@ -26,4 +26,35 @@
     <select id="findById" parameterType="Integer" resultMap="PhoneBookResult">
         select * from t_phoneBook where id = #{id}
     </select>
+
+    <update id="update" parameterType="PhoneBook">
+        update t_phoneBook
+        <set>
+            <if test="name!=null and name!=''">
+                name=#{name},
+            </if>
+            <if test="phoneNumber!=null and phoneNumber!=''">
+                phoneNumber=#{phoneNumber},
+            </if>
+            <if test="teleNumber!=null and teleNumber!=''">
+                teleNumber=#{teleNumber},
+            </if>
+            <if test="workAddress!=null and workAddress!=''">
+                workAddress=#{workAddress},
+            </if>
+            <if test="homeAddress!=null and homeAddress!=''">
+                homeAddress=#{homeAddress},
+            </if>
+            <if test="image!=null and image!=''">
+                image=#{image},
+            </if>
+            <if test="remark!=null and remark!=''">
+                remark=#{remark},
+            </if>
+            <if test="initial!=null and initial!=''">
+                initial=#{initial},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
 </mapper>

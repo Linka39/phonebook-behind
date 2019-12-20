@@ -34,4 +34,9 @@ public class PhoneBookServiceImpl implements PhoneBookService {
     public Integer update(PhoneBook phoneBook) {
         return phoneBookMapper.update(phoneBook);
     }
+
+    @Override
+    public Integer delete(Integer id) {
+        return phoneBookMapper.delete(id);
+    }
 }

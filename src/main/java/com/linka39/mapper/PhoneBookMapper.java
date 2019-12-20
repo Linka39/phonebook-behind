@@ -33,4 +33,11 @@ public interface PhoneBookMapper {
      * @return
      */
     Integer update(PhoneBook phoneBook);
+
+    /**
+     * 删除信息
+     * @param id
+     * @return
+     */
+    Integer delete(Integer id);
 }

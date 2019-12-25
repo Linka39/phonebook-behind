@@ -43,5 +43,6 @@ public class WebAppConfigurer implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/image/**").addResourceLocations("file:E:\\img\\");
         // linux路径    file:/home/userImages/
+        registry.addResourceHandler("/image/**").addResourceLocations("file:/home/userImages/");
     }
 }

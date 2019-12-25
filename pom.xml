@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.Linka39</groupId>
     <artifactId>phonebook</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>v3</version>
     <packaging>war</packaging>
     <name>phonebook</name>
     <description>Demo project for Spring Boot</description>

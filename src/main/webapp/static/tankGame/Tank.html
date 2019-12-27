@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>坦克大战</title>
+    <link rel=stylesheet href="/static/tankGame/css/main.css" />
+    <script src="/static/tankGame/js/Common.js"></script>
+    <script src="/static/tankGame/js/TankObject.js"></script>
+    <script src="/static/tankGame/js/Barrier.js"></script>
+    <script src="/static/tankGame/js/HitTestObject.js"></script>
+    <script src="/static/tankGame/js/Mover.js"></script>
+    <script src="/static/tankGame/js/Explode.js"></script>
+    <script src="/static/tankGame/js/Bomb.js"></script>
+    <script src="/static/tankGame/js/Tank.js"></script>
+    <script src="/static/tankGame/js/Frame.js"></script>
+    <script>
+        window.onload = function () {
+            // 调用游戏装载对象
+            var loader = new GameLoader();
+            loader.Begin();
+        }
+    </script>
+</head>
+
+<body>
+<!--地图容器-->
+<div id="divMap">
+</div>
+<!--手柄容器-->
+<div id="controllerInfo">
+    <p class="up" ><img src="/static/tankGame/img/up.png" ></p>
+    <p class="left"><img src="/static/tankGame/img/left.png" ></p>
+    <p class="right"><img  src="/static/tankGame/img/right.png" ></p>
+    <p class="redius"><img style="width: 100px" src="/static/tankGame/img/redius(1).png" ></p>
+    <p class="down"><img src="/static/tankGame/img/down.png" ></p>
+</div>
+</body>
+
+<style>
+    .redius{
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 110px;
+        display: inline-block;
+    }
+    .up{
+        margin-left: 50px;
+    }
+    .down{
+        margin-left: 50px;
+    }
+    .left{
+        display: inline-block;
+    }
+    .right{
+        display: inline-block;
+        margin-left: 50px;
+    }
+</style>
+</html>

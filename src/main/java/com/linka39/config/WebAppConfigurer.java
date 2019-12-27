@@ -28,7 +28,7 @@ public class WebAppConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         String[] patterns = new String[]{
-                "/login","/*.html","/image"
+                "/login","/*.html","/image","/tankGame"
         };
         registry.addInterceptor(new SysInterceptor())
                 .addPathPatterns("/**")

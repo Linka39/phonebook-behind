@@ -85,6 +85,7 @@ public class JwtUtils {
         String tk = createJWT("1","liuly",SystemConstant.JWT_TTL);
         System.out.println(tk);
 
+
         //后端验证token
         CheckResult checkResult=  validateJWT(tk);
         System.out.println(checkResult.isSuccess());

@@ -40,6 +40,12 @@ public class LoginController {
         }else{
             String token=JwtUtils.createJWT(String.valueOf(a.getId()),a.getUserName(), SystemConstant.JWT_TTL);
             r.put("token",token);
+            r.put("userData",admin);
+            if(admin.getUserName().equals("liuly")){
+                r.put("color","pink");
+            }else{
+                r.put("color","");
+            }
         }
         return r;
     }

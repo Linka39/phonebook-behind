@@ -3,6 +3,12 @@
 <head>
     <title>坦克大战</title>
     <link rel=stylesheet href="/static/tankGame/css/main.css" />
+    <link rel=stylesheet href="/static/tankGame/css/main.css" />
+    <!--图标库-->
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.7.0.css">
+    <!--核心样式-->
+    <link rel="stylesheet" href="/static/tankGame/css/style.css">
+    <script src="/static/tankGame/js/jquery.min.js"></script>
     <script src="/static/tankGame/js/Common.js"></script>
     <script src="/static/tankGame/js/TankObject.js"></script>
     <script src="/static/tankGame/js/Barrier.js"></script>
@@ -32,20 +38,29 @@
     <p class="right"><img  src="/static/tankGame/img/right.png" ></p>
     <p class="redius"><img style="width: 100px" src="/static/tankGame/img/redius(1).png" ></p>
     <p class="down"><img src="/static/tankGame/img/down.png" ></p>
-</div>
+        <span class="mark1">游戏说明：</span>
+        <span class="mark2">w,a,s,d控制移动，j发射</span>
+    </div>
+    <div class="hover-btns">
+        <a class="btn pinterest" id="btn1"><i class="fa fa-pinterest"></i></a>
+    </div>
+    <div id="InputController"><input id="input1" class="inputStyle" autocomplete="off" maxlength="4" placeholder="点击获取焦点"></div>
+    </div>
 </body>
 
 <style>
     .redius{
         position: absolute;
         margin-top: 0px;
-        margin-left: 110px;
+        margin-left: 90px;
         display: inline-block;
     }
     .up{
+        margin-top: -8px;
         margin-left: 50px;
     }
     .down{
+        margin-top: 0;
         margin-left: 50px;
     }
     .left{
@@ -55,5 +70,34 @@
         display: inline-block;
         margin-left: 50px;
     }
+    .mark1{
+        font:italic bold 21px arial;
+        margin-left: 10px;
+        margin-top: 20px;
+        display: block;
+        color: #1a0f1e;
+    }
+    .mark2{
+        font:italic bold 18px arial,sans-serif;
+        margin-left: 20px;
+        margin-top: 9px;
+        display: block;
+        color: #000000;
+    }
+    #InputController{
+        position: absolute;
+        top: 425px;
+        left: 710px;
+    }
+    .inputStyle{
+        height: 30px;
+        border-radius: 10%;
+        display: inline-block;
+    }
 </style>
+<script>
+    $("#btn1").on("click",function () {
+        $("#input1").toggle(500);
+    })
+</script>
 </html>

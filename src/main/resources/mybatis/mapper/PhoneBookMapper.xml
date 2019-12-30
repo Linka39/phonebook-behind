@@ -16,7 +16,7 @@
     </resultMap>
 
     <select id="loadByInitial" parameterType="String" resultMap="PhoneBookResult">
-        select id,name,image from t_phoneBook where initial = #{initial}
+        select id,name,image from t_phoneBook where initial = #{initial} and userName = #{userName}
     </select>
 
     <insert id="add" parameterType="PhoneBook">

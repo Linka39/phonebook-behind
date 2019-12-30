@@ -69,23 +69,23 @@ GameLoader.prototype = {
     // 键盘按下玩家坦克开始移动
     , OnKeyDown: function (e) {
         switch ((window.event || e).keyCode) {
-            case 37:
+            case 65:
                 this._selfTank.Direction = EnumDirection.Left;
                 this._selfTank.MovingState = true;
                 break;		//左
-            case 38:
+            case 87:
                 this._selfTank.Direction = EnumDirection.Up;
                 this._selfTank.MovingState = true;
                 break;		//上
-            case 39:
+            case 68:
                 this._selfTank.Direction = EnumDirection.Right;
                 this._selfTank.MovingState = true;
                 break;		//右
-            case 40:
+            case 83:
                 this._selfTank.Direction = EnumDirection.Down;
                 this._selfTank.MovingState = true;
                 break;		//下
-            case 32:
+            case 74:
                 this._selfTank.Shot(this._battleField);
                 break;		//空格
         }
@@ -94,10 +94,10 @@ GameLoader.prototype = {
     // 按键弹起停止移动
     , OnKeyUp: function (e) {
         switch ((window.event || e).keyCode) {
-            case 37:
-            case 38:
-            case 39:
-            case 40:
+            case 65:
+            case 87:
+            case 68:
+            case 83:
                 this._selfTank.MovingState = false;
                 break;
         }
@@ -175,8 +175,8 @@ GameLoader.prototype = {
         for (var i = 0; i < this._enimyTanks.length; i++) {
 
             if (this._enimyTanks[i] instanceof Mover) {
-                 this._enimyTanks[i].Move(this._battleField);
-                 if (Math.random() * 100 < 5) { this._enimyTanks[i].Shot(this._battleField) };/* 5%的概率发射炮弹 */
+                this._enimyTanks[i].Move(this._battleField);
+                if (Math.random() * 100 < 5) { this._enimyTanks[i].Shot(this._battleField) };/* 5%的概率发射炮弹 */
             }
         }
     }

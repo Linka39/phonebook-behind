@@ -16,8 +16,8 @@ public class PhoneBookServiceImpl implements PhoneBookService {
     @Autowired
     private PhoneBookMapper phoneBookMapper;
 
-    public List<PhoneBook> loadByInitial(String initial){
-        return phoneBookMapper.loadByInitial(initial);
+    public List<PhoneBook> loadByInitial(String initial,String userName){
+        return phoneBookMapper.loadByInitial(initial,userName);
     }
 
     @Override

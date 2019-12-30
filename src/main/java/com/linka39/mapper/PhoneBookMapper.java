@@ -1,6 +1,7 @@
 package com.linka39.mapper;
 
 import com.linka39.entity.PhoneBook;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface PhoneBookMapper {
     /**
      * 根据姓名首字母查询电话簿记录
      */
-    List<PhoneBook> loadByInitial(String initial);
+    List<PhoneBook> loadByInitial(@Param("initial")String initial,@Param("userName")String userName);
 
     /**
      * 添加信息

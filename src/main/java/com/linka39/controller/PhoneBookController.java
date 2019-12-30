@@ -3,13 +3,16 @@ package com.linka39.controller;
 import com.linka39.entity.PhoneBook;
 import com.linka39.entity.R;
 import com.linka39.service.PhoneBookService;
+import com.linka39.util.JwtUtils;
 import com.linka39.util.PinYinUtil;
 import com.linka39.util.StringUtil;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -34,13 +37,15 @@ public class PhoneBookController {
      * @throws Exception
      */
     @RequestMapping("/loadAll")
-    public R loadAll()throws Exception{
+    public R loadAll(HttpServletRequest request)throws Exception{
         //LinkedHashMap相对有序
         Map<String,Object> map=new LinkedHashMap<>();
+        Claims claims = JwtUtils.validateJWT(request.getHeader("token")).getClaims();
+        String userName = claims.getSubject();
         char []letters={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','#'};
         for(int i=0;i<letters.length;i++){
             String letter=String.valueOf(letters[i]);
-            List<PhoneBook> phoneBooks = phoneBookService.loadByInitial(letter);
+            List<PhoneBook> phoneBooks = phoneBookService.loadByInitial(letter,userName);
             if(phoneBooks.size()>0){
                 map.put(letter,phoneBooks);
             }

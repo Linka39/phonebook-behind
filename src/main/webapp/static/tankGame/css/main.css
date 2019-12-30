@@ -78,11 +78,11 @@ body
 {
 	color:white;
 	background-color: #9191a7;
-	position:relative;
-	left:100px;
+	position:absolute;
+	left:600px;
 	top:50px;
 	overflow:auto;
-	width:400px;
+	width:370px;
 	height:250px;
 	border-radius: 12%;
 }

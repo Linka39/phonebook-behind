@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
     <!--设置存储路径变量-->
-    <property name="log.path" value="E:/log2"/>
-    <!--<property name="log.path" value="/home/log"/>-->
+    <!--<property name="log.path" value="E:/log2"/>-->
+    <property name="log.path" value="/home/log"/>
 
     <!--控制台输出appender-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
